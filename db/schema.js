@@ -8,13 +8,23 @@ const usersSchema = new Schema({
     password: String,
 })
 
-const postsSchema = new Schema({
+/*const postsSchema = new Schema({
   title: String, 
   body: String,
   user: Object
-})
+})*/
+
+const tweetSchema = new Schema({
+		content: String,
+		userHandle: String
+	},
+	{
+		timestamps: true
+	})
+
 
 module.exports = {
-  User: createModel('User', usersSchema),
-  Post: createModel('Post', postsSchema)
+  // User: createModel('User', usersSchema),
+  // Post: createModel('Post', postsSchema)
+  Tweet: createModel('Tweet', tweetSchema)
 }
